@@ -81,6 +81,9 @@ select {
 	vertical-align: middle;
 	display: inline-block;
 	font: 900 48px Roboto, sans-serif; /* 1 */
+
+
+
 }
 .header__naw{
 	padding: 0;
@@ -110,17 +113,30 @@ select {
 .section{
 	padding: 70px 0;
 }
+.slide{
+	width: 100%;
+
+
+    background-image: -webkit-radial-gradient(circle farthest-side at 71% center,rgb(255, 255, 255) 20%,rgb(238, 238, 238) 30%);
+    
+    background-image: radial-gradient(circle farthest-side at 71% center,rgb(255, 255, 255) 20%,rgb(238, 238, 238) 30%);
+    background-image: -ms-radial-gradient(circle farthest-side at 71% center,rgb(255, 255, 255) 20%,rgb(238, 238, 238) 30%);
 
 
 
+
+}
 .slider__text{
-	max-width: 615px;
+	width: 50%;
+	display: inline-block;
 }	
 
 .slider__title{
 	font:  900 150px Raleway, sans-serif;
 	text-transform: uppercase;
 	margin: 0;
+	overflow: hidden;
+    height: 320px;
 } 
 .slider__info{
 	font:  300 24px/36px Roboto, sans-serif;
@@ -143,10 +159,10 @@ select {
 	border-bottom: 2px solid #e10011;
 }
 .slider__img{
-	position: absolute;
-	top: 0; 
-	right: 0;
-	z-index: -1;
+	float: right;
+	width: 500px;
+    margin-right: 50px;
+    margin-top: 20px;
 }
 
 .slider__nav{
@@ -176,9 +192,52 @@ select {
 	background-color: #fff;
 }
 .section__title{
-	font:  900 48px/1.4 Raleway, sans-serif;
-	margin: 0;
+    font: 900 48px/1.4 Raleway, sans-serif;
+    margin: 0;
+    height: 90px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 20px;
+
 }
+.section__title--underline{
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.section__title--underline:before,
+.section__title--underline:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			display: inline-block;
+		    top: 45px;		
+		
+
+}
+
+.section__title--underline:before{
+	width: 229px;
+	background-image: url('../img/underline.png');
+	height: 35px;
+	background-repeat: repeat-x;
+	background-position: center;
+	transform: translate(-50%, 50%);
+	
+}
+.section__title--underline:after{
+	width: 35px;
+	height: 35px;
+	background-color: #fff;
+	background-image: url('../img/star.png');
+	transform: translate(-50%, 50%);
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
 .section__descr{
 	display: inline-block;
 	max-width: 585px;
@@ -214,7 +273,8 @@ select {
 }
 
 
-.gallery__item:hover .gallery__overlay{
+.gallery__item:hover .gallery__overlay,
+.gallery__item.acticve .gallery__overlay{
 	opacity: 1;
 }
 
